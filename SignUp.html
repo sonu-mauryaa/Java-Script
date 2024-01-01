@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<title>SignUp</title>
+</head>
+
+<body class="bg-danger">
+	<div class="container-fluid">
+		<div class="row mt-5">
+			<div class="col-sm-8 mx-auto mt-5 bg-warning text-info">
+				<h1 style="text-align: center; text-decoration: underline;">SignUp To Get Data</h1>
+				Name<input class="form-control" type="text" id="name" /> <br>
+				Number<input class="form-control" type="number" id="number" /> <br>
+				Email<input class="form-control" type="email" id="email" /> <br>
+				Message<textarea class="form-control" id="msg"></textarea> <br>
+				<input class="form-control bg-info" type="button" onclick="demo()" value="Get Data" />
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		demo = () => {
+			var name = document.querySelector("#name").value;
+			var number = document.querySelector("#number").value;
+			var email = document.querySelector("#email").value;
+			var msg = document.querySelector("#msg").value;
+			document.querySelector("p").innerHTML = `
+	   <div>
+					   <b>Name is:</b>${name} </br>
+					   <b>Mobile is:</b>${number} </br>
+					   <b>Email is:</b>${email} </br>
+					   <b>Message is:</b>${msg} </br>
+					   </div>
+					   <button class="form-control bg-info" onclick="demo1()">Print Data</button>`
+		}
+
+		function demo1() {
+			var b = document.body.innerHTML;
+			var x = document.querySelector("div").innerHTML;
+			document.body.innerHTML = x;
+			print();
+			document.body.innerHTML = b;
+		}
+	</script>
+</body>
+
+</html>

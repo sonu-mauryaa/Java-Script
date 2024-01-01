@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Captcha-Code</title>
+    <style>
+        p {
+            background: url(Image/captcha.jpeg);
+            
+        }
+    </style>
+</head>
+
+<body onload="demo()" class="bg-secondary">
+    <div class=" container">
+        <div class="row mt-5">
+            <div class="col-sm-4 mx-auto mt-1 bg-light">
+                <h2 class="text-decoration-underline">Captcha-Validation</h2><br>
+
+                <p class="form-control text-success" id="txt1"
+                    style="height: 50px; font-size:35px; line-height:35px;letter-spacing:12px;">G5R6D7</p>
+                <i class="fa fa-refresh" onclick="demo()" style="font-size:48px;color:black"></i><br><br>
+                <input type="text" class="form-control" placeholder="Enter Above Captcha Here.." id="txt2"><br>
+                <span></span>
+                <button onclick="demo1()" class="form-control btn btn-success">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function demo() {
+            var str = "1ABV#FIIad4$h5dGyO6aL7qo&oG8lD#Ag";
+            var captcha = "";
+
+            for (var i = 0; i <= 5; i++) {
+                var rindex = Math.floor(Math.random() * str.length);
+                var rchar = str[rindex];
+                captcha = captcha + rchar;
+            }
+            document.querySelector("#txt1").innerText = captcha;
+
+            function demo1() {
+                var a = document.querySelector("#txt1");
+                var b = document.querySelector("#txt2");
+                var msg = document.querySelector("span");//For Validation msg on span Tag.
+                if (a.innerText == b.value) {
+                    a.style.border = "3px solid green";
+                    b.style.border = "3px solid green";
+                    msg.innerText = "Valid Captcha";
+                    msg.style.color = "green";
+                }
+                else {
+                    a.style.border = "3px solid red";
+                    b.style.border = "3px solid red";
+                    msg.innerText = "Invalid Captcha";
+                    msg.style.color = "red";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

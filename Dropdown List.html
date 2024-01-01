@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DropDown List</title>
+</head>
+
+<body>
+	<input onchange="demo(this)" value="ddl" type="radio" name="a" /> Dropdown list
+	<input onchange="demo(this)" value="ol" type="radio" name="a" /> Ol list
+	<input onchange="demo(this)" value="ul" type="radio" name="a" /> Ul list
+	<p id="p"></p>
+	<script>
+		function demo(x) {
+			var arr = ["HTML", "CSS", "JS", "JQUERY", "BOOTSTRAP", "PHP", "DOTNET", "C LANGUAGE", "MYSQL", "REACTJS"]
+			var color1 = ["yello", "pink", "blue", "maroon", "red", "green", "aqua", "cyan", "navy", "orange"]
+			var v = x.value;
+
+			if (v == "ddl")     //ddl
+			{
+				var res = "<select>";
+				arr.forEach(function (data, i) {
+					res += "<option style='color:" + color1[i] + ";'>" + data + "</option>";
+				})
+				res += "</select>"
+			}
+
+			if (v == "ul")       //ul
+			{
+				var res = "<ul>";
+				arr.forEach(function (data, i) {
+					res += "<option style='color:" + color1[i] + ";'>" + data + "</option>";
+				})
+				res += "</ul>"
+			}
+
+			if (v == "ol")   //ol
+			{
+				var res = "<ol>";
+				arr.forEach(function (data, i) {
+					res += "<option style='color:" + color1[i] + ";'>" + data + "</option>";
+				})
+				res += "</ol>"
+			}
+			p.innerHTML = res;
+		}
+
+	</script>
+</body>
+
+</html>

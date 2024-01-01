@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Sonu Maurya</p>
+    <script>
+        var x = "1A2B3C4D5E6F789"
+        var color = "#"
+        for (var i = 0; i <= 5; i++) {
+            var k = Math.floor(Math.random() * 15)
+            color = color + x.charAt(k)
+            //alert(color)
+        }
+        var a = document.querySelector("p")
+        a.style.background = color
+        a.innerHTML = "<h1>" + color + "</h1>"	
+    </script>
+
+</body>
+
+</html>

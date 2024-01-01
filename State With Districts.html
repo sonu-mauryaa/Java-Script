@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State With Districts</title>
+</head>
+
+<body>
+    <p id="state"></p>
+    <p id="city"></p>
+    <script>
+        var state = ["Uttar-Pradesh", "Madhya-Pradesh", "Uttarakhand"];
+        var upcities = ["Varanasi", "Bhadohi", "Kanpur", "Mirzapur", "Prayagraj", "Jaunpur", "Agra", "Ayodhya", "Lucknow", "Gorakhpur", "Mainpuri"];
+        var mpcities = ["Bhopal", "Indore", "Rewa", "Khandwa", "Jabalpur", "Gwalior", "Satna", "Katni", "Maihar"];
+        var ukcities = ["Haridwar", "Rishikesh", "Sonprayag", "Nainital", "Kasauli", "Shahid Udham Singh Nagar", "Almora", "Dehradun", "Champavat"];
+
+        var r = "<select onchange='demo(this)'><option>--Select State--</option>"
+        state.forEach((data) => {
+            r += "<option>" + data + "</option>"
+        })
+
+        r += "</select>"
+        document.querySelector("#state").innerHTML = r
+        var demo = (obj) => {
+            var res = "<select>";
+
+            if (obj.value == "Uttar-Pradesh")    //UP
+            {
+                upcities.forEach((data) => {
+                    res = res + "<option>" + data + "</option>"
+                })
+            }
+
+            else if (obj.value == "Madhya-Pradesh")     //MP
+            {
+                mpcities.forEach((data) => {
+                    res = res + "<option>" + data + "</option>"
+                })
+            }
+
+            else if (obj.value == "Uttarakhand")        //UK
+            {
+                ukcities.forEach((data) => {
+                    res = res + "<option>" + data + "</option>"
+                })
+            }
+            else {
+                document.querySelector("#city").style.display = "none";
+                document.querySelector("#city").innerHTML;
+            }
+            res += "</select>"
+            document.querySelector("#city").innerHTML = res;
+        }
+    </script>
+
+</body>
+
+</html>

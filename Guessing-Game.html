@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing-Game</title>
+    <style>
+        body {
+            background-color: teal;
+        }
+
+        #outer {
+            min-height: 300px;
+            padding: 25px;
+            border: 10px double white;
+            width: 400px;
+            margin: 10px auto;
+            color: white;
+
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        #msg {
+            background-color: white;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: red;
+
+        }
+
+        .b {
+            height: 45px;
+            width: 45px;
+            line-height: 45px;
+            text-align: center;
+            background-color: white;
+            color: red;
+            font-size: 25px;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <p id="s">Score</p>
+        <p id="msg">Message</p>
+        <p id="gn">Generated No.</p>
+        <div class="b" onclick="demo(this)">1</div>
+        <div class="b" onclick="demo(this)">2</div>
+        <div class="b" onclick="demo(this)">3</div>
+        <div class="b" onclick="demo(this)">4</div>
+        <div class="b" onclick="demo(this)">5</div>
+        <div class="b" onclick="demo(this)">6</div>
+    </div>
+    <script>
+        var t = 0;
+        var w = 0;
+        demo = (obj) => {
+            t++;
+            var msg = document.querySelector("#msg");
+            var s = document.querySelector("#s");
+            var gn = Math.floor(Math.random() * 6) + 1;
+            var a = document.querySelector("#gn");
+            a.innerText = "Generated No is: " + gn;
+            if (obj.innerText == gn) {
+                w++;
+                msg.innerText = " Congratulation! You Win 👍";
+                msg.style.color = "green";
+            }
+            else {
+                msg.innerText = "Better Luck for Next Time 😔";
+                msg.style.color = "red";
+            }
+            s.innerText = "Score : " + w + "/" + t;
+        }
+    </script>
+</body>
+
+</html>

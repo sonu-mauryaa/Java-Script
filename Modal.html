@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal</title>
+
+	<head>
+		<style>
+			.imgS {
+				height: 200px;
+				width: 320px;
+				border: 3px solid grey;
+				padding: 10px;
+				border-radius: 5px;
+				margin: 25px;
+			}
+
+			#modal {
+				background: rgba(0, 0, 0, .6);
+				height: 600px;
+				width: 100%;
+				position: fixed;
+				top: 0px;
+				display: none;
+			}
+
+			#modalInner {
+				height: 400px;
+				width: 550px;
+				background: white;
+				border-radius: 10px;
+				padding: 25px;
+				margin: 80px auto;
+			}
+
+			#modalInner img {
+				height: 80%;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+<body>
+	<img src="Image/2.jpg" onclick="demo(this)" class="imgS" />
+	<img src="Image/3.jpg" onclick="demo(this)" class="imgS" />
+	<img src="Image/4.jpg" onclick="demo(this)" class="imgS" />
+	<img src="Image/5.jpg" onclick="demo(this)" class="imgS" />
+	<img src="Image/6.jpg" onclick="demo(this)" class="imgS" />
+	<img src="Image/7.jpg" onclick="demo(this)" class="imgS" />
+	<!-- start modal -->
+	<div id="modal">
+		<div id="modalInner">
+			<h3>Image Title<a href="Modal.html" style="color:red;float:right;">Hide</a></h3>
+			<img src="Image/6.jpg" id="imgBig" />
+		</div>
+	</div>
+	<script>
+		demo = (x) => {
+			document.querySelector("#modal").style.display = "block";
+			document.querySelector("#imgBig").src = x.src;
+		}
+		window.setTimeout(function () {
+			document.querySelector("#modal").style.display = "none"
+		}, 400)
+		// window.setTimeout(function () {
+		// 	document.querySelector("#modal").style.display = "none"
+		// }, 2000);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SignUp</title>
+   <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body class="bg-info">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-sm-4 mx-auto mt-5 p-3 bg-success">
+            <a href="#" onclick="demo2()" class="btn btn-danger">Register</a>
+            <a href="#" onclick="demo1()" class="btn btn-primary float-end">Login</a>
+            <div id="regform">
+               Name<input type="text" class="form-control" />
+               Email<input type="email" class="form-control" />
+               Password<input type="password" class="form-control" />
+               Mobile<input type="number" class="form-control" />
+               <input type="submit" class="btn btn-warning mt-2" value="SignUp" />
+            </div>
+            <div id="loginform">
+               Username<input type="email" class="form-control" />
+               Password<input type="password" class="form-control" />
+               <input type="submit" class="btn btn-info mt-2" value="Login" />
+               <a href="#" onclick="demo3()">Forgot Password</a>
+            </div>
+            <div id="fpform">
+               <input type="text" class="form-control" />
+               <input type="submit" class="btn btn-dark mt-2" value="Send OTP" />
+            </div>
+         </div>
+      </div>
+   </div>
+   <script>
+      var rform = document.querySelector("#regform");
+      var lform = document.querySelector("#loginform");
+      var fform = document.querySelector("#fpform");
+      lform.style.display = "none";
+      fform.style.display = "none";
+      function demo1() {
+         lform.style.display = "block";
+         rform.style.display = "none";
+         fform.style.display = "none";
+      }
+      function demo2() {
+         rform.style.display = "block";
+         fform.style.display = "none";
+         lform.style.display = "none";
+      }
+      function demo3() {
+         rform.style.display = "none";
+         fform.style.display = "block";
+         lform.style.display = "none";
+      }
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set-Color-On-Background</title>
+    <style>
+        div {
+            height: 300px;
+            width: 400px;
+            border: 10px solid red;
+            text-align: center;
+            margin: 80px auto;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            background-color: red;
+            line-height: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Red</h1>
+        <button onclick="demo1()">Set Color</button>
+    </div>
+    <script>
+        var demo = () => {
+            var s = "123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i <= 5; i++) {
+                var ri = Math.floor(Math.random() * s.length);
+                color = color + s.charAt(ri);
+            }
+            var h = document.querySelector("h1");
+            h.innerText = color;
+            h.style.backgroundColor = color;
+        }
+        setInterval(demo, 1000);
+
+        var demo1 = () => {
+            var h = document.querySelector("h1");
+            var b = h.innerText;
+            document.querySelector("div").style.background = b;
+
+        }
+    </script>
+</body>
+
+</html>
